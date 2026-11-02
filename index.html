@@ -1,36 +1,67 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supabase Test</title>
+    <title>ESP32 IoT Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Include Supabase JS SDK CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
+    <header>
+        <h1>ESP32 Supabase Dashboard</h1>
+        <p>Live Monitoring & Control Panel</p>
+    </header>
 
-<h2>Supabase Read Write Test</h2>
+    <main class="dashboard-container">
+        <!-- Left Side: Control Table -->
+        <section class="card">
+            <h2>Control Commands (Latest 10)</h2>
+            <div class="table-wrapper">
+                <table id="control-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cmd1</th>
+                            <th>Cmd2</th>
+                            <th>Cmd3</th>
+                            <th>Cmd4</th>
+                            <th>Cmd5</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data injected dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-<input id="tag" placeholder="Tag">
-<input id="value" placeholder="Value">
+        <!-- Right Side: Sensor Table -->
+        <section class="card">
+            <h2>Sensor Telemetry (Latest 10)</h2>
+            <div class="table-wrapper">
+                <table id="sensor-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Sensor1</th>
+                            <th>Sensor2</th>
+                            <th>Sensor3</th>
+                            <th>Sensor4</th>
+                            <th>Sensor5</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data injected dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
 
-<!-- <button onclick="saveData()">SAVE</button> -->
-<!-- <button onclick="loadData()">REFRESH</button> -->
-
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>TAG</th>
-            <th>VALUE</th>
-            <th>TIME</th>
-        </tr>
-    </thead>
-    <tbody id="tbody"></tbody>
-</table>
-
-<!-- Library Supabase -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<!-- Script utama (diletakkan di akhir body agar DOM siap) -->
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
