@@ -1,24 +1,112 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    background-color: #f4f6f9;
+    color: #333;
+    padding: 20px;
 }
 
-input {
-    padding: 8px;
-    margin: 5px;
+header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-button {
-    padding: 8px 15px;
+header h1 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #7f8c8d;
+}
+
+.dashboard-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 480px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 8px;
+}
+
+/* Scrollbar container */
+.table-wrapper {
+    max-height: 420px;
+    overflow-y: auto;
+    border: 1px solid #e1e8ed;
+    border-radius: 6px;
+}
+
+/* Custom Scrollbar Styling */
+.table-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #bdc3c7;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #95a5a6;
 }
 
 table {
-    border-collapse: collapse;
     width: 100%;
-    margin-top: 20px;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.85rem;
 }
 
-td, th {
-    border: 1px solid #ddd;
-    padding: 8px;
+th, td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+@media (max-width: 1024px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    .card {
+        min-width: 100%;
+    }
 }
